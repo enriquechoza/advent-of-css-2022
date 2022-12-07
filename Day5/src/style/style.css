@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #F3F3F3;
+  font-family: 'Nunito Sans', sans-serif;;
+  padding: 30px;
+}
+
+h1 {
+  padding-top: 40px;
+  text-align: center;
+}
+
+
+.main-section {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 100px;
+  background-color: white;
+  border-radius: 32px;
+  height: 538px;
+  filter: drop-shadow(0px 5.40459px 32.4276px #453F3F);
+  position: relative;
+  width: 80%;
+}
+
+.cover {
+  width: 50%;
+}
+
+.cover > img {
+  filter: drop-shadow(0px 5.40459px 32.4276px #453F3F);
+  position: absolute;
+  top: -20px;
+  left: -60px
+}
+
+.checklist-container {
+  width: 50%;
+  margin-top: 60px;
+  margin-left: 60px;
+}
+
+.checklist-container > h2 {
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 22px;
+  text-transform: uppercase;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #A7A7A7;
+}
+
+.checklist-container > ul {
+  margin-top: 40px;
+  list-style: none;
+  color: #4E4E4E;
+}
+
+.checklist-container > ul > li {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.checklist-container > ul > li > label {
+  margin-left: 60px;
+  line-height: 45px;
+}
+
+/* Refer to https://www.w3schools.com/howto/howto_css_custom_checkbox.asp to see custom checkbox */
+/* Hide browser's default checkbox */
+.checklist-container > ul > li > label > input {
+  display: inline;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create custom checkbox */
+.checklist-container > ul > li > label > .checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  border: 2.7px solid #C9CDD1;
+  border-radius: 16.21px;
+}
+
+/* On mouse-over, add a grey background color */
+.checklist-container > ul > li > label:hover > input ~ .checkbox {
+  transform: scale(1.1, 1.1);
+}
+
+/* When the checkbox is checked, change label color */
+.checklist-container > ul > li > label:has(input:checked ) {
+  color: #C9CDD1;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checklist-container > ul > li > label > .checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checklist-container > ul > li > label > input:checked ~ .checkbox:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checklist-container > ul > li > label > .checkbox:after {
+  left: 12px;
+  top: 4px;
+  width: 8px;
+  height: 20px;
+  border: solid #757575;
+  border-width: 0 8px 8px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
